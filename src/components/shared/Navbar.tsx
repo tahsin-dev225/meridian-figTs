@@ -18,7 +18,7 @@ export const navItems: NavItem[] = [
 
 const Navbar = () => {
     return (
-        <div className='grid py-2 grid-cols-2 items-center xl:grid-cols-3 gap-2 2xl:gap-5'>
+        <div className='grid container mx-auto py-2 grid-cols-2 items-center xl:grid-cols-3 gap-2 2xl:gap-5'>
             <div className="flex gap-3 items-center ">
                 <Image className='w-[62px] xl:w-[86px]' src={'/img/logo.png'} height={300} width={300} alt='logo'/>
                 <h4 className="text-[#DB352F] font-bold  md:text-[22px] lg:text-[24px] xl:text-[30px] xxl-[36px]">Meridian Ventures</h4>

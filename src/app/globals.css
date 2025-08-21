@@ -13,6 +13,7 @@
   --breakpoint-xsm: 350px;
   --breakpoint-smd: 480px;
   --breakpoint-xxl: 1350px;
+  --breakpoint-1281: 1281px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -30,4 +31,7 @@ body {
 
 .font-inter {
   font-family: var(--font-inter);
+}
+html body{
+  scroll-behavior: smooth;
 }

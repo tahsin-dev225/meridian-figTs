@@ -5,7 +5,7 @@ import React from 'react';
 const ChosenBy = () => {
     return (
         <div className=" container p-1.5 mx-auto">
-            <div className='xxl:max-w-[1250px] xl:max-w-[1200px] mx-auto my-14 md:items-center grid grid-cols-1 md:grid-cols-2 gap-12'>
+            <div className='xxl:max-w-[1250px] xl:max-w-[1200px] mx-auto sm:my-14 md:items-center grid grid-cols-1 md:grid-cols-2 gap-12'>
                 <div className="grid md:grid-cols-1 lg:grid-cols-2 xsm:grid-cols-2 items-center">
                     <div className="p-5 py-7 w-full rounded-2xl bg-[#475BF1] text-[#FFFFFF]">
                         <h2 className='md:text-[32px] text-[22px] xl:text-[50px] font-bold'>13+</h2>

@@ -1,7 +1,8 @@
 "use client"
+import { MenuIcon, X } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
 
 type NavItem = {
   name: string;
@@ -17,6 +18,12 @@ export const navItems: NavItem[] = [
 ];
 
 const Navbar = () => {
+    const [isOpen, setIsOpen] = useState<boolean>(false);
+
+    const toggleDrawer = (open: boolean) => () => {
+    setIsOpen(open);
+  };
+
     return (
         <div className='grid container mx-auto py-2 grid-cols-2 items-center xl:grid-cols-3 gap-2 2xl:gap-5'>
             <div className="flex gap-3 items-center ">
@@ -35,6 +42,34 @@ const Navbar = () => {
                     {item.name}
                     </Link>
                 ))}
+            </div>
+            <div className="flex relative transition-all delay-700 justify-end md:hidden ">
+                {isOpen ? (
+                    <X
+                        onClick={toggleDrawer(false)}
+                        className="size-7 lg:size-[30px] mx-3 sm:mx-5 md:hidden"
+                    />
+                    ) : (
+                    <MenuIcon
+                        onClick={toggleDrawer(true)}
+                        className="size-7 lg:size-[30px] mx-3 sm:mx-5 md:hidden"
+                    />
+                )}
+                {
+                    isOpen && <div className="absolute transition-transform ease-in-out delay-1000 z-50 flex flex-col bg-white top-6 right-0">
+                        {navItems?.map((item) => (
+                            <Link
+                            className={`px-3 items-center font-tight text-[12px]  font-bold text-[#10161B] py-2.5 h-max  ${
+                                item.name === "HOME" && "bg-[#8FEF2F] text-black!"
+                            } `}
+                            key={item.name}
+                            href={item.href}
+                            >
+                            {item.name}
+                            </Link>
+                        ))}
+                    </div>
+                }
             </div>
         </div>
     );

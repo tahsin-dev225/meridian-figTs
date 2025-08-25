@@ -1,11 +1,13 @@
 "use client"
-import { ArrowUpRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowUpRight, ChevronLeft, ChevronRight, Facebook, Twitter } from 'lucide-react';
 import Image from 'next/image';
 import React from 'react';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from 'swiper/modules';
 
 import "swiper/css";
+import { BsTwitterX } from 'react-icons/bs';
+import { FaLinkedinIn } from 'react-icons/fa';
 
 type casesType ={
     id: number;
@@ -43,7 +45,7 @@ const cases:casesType[] = [
 
 const Team = () => {
     return (
-        <div className='w-full px-2 text-white bg-[#10161B] mt-32 mb-8'>
+        <div className='w-full px-2 text-white bg-[#10161B] mt-32 pb-4 mb-8'>
             <div className="lg:w-[90%] xxl:max-w-[1250px] xl:max-w-[1200px] mx-auto py-14 pt-[80px] md:items-center">
                 <div className="flex smd:items-center justify-between mb-10">
                     <div className="">
@@ -80,8 +82,8 @@ const Team = () => {
                 }}
                 >
                 {cases.map((item) => (
-                    <SwiperSlide  key={item.id}>
-                        <div className="relative max-w-[250px] md:max-w-[270px] lg:max-w-[300px] max-h-[390px] md:h-w-[420px] lg:max-h-[500px] rounded-xl overflow-hidden shadow-lg group">
+                    <SwiperSlide className='overflow-x-auto'  key={item.id}>
+                        <div className="relative max-w-[250px] md:max-w-[270px] transition-all hover:rounded-tl-[80px] hover:rounded-br-[80px]  ease-out lg:max-w-[300px] max-h-[390px] md:h-w-[420px] lg:max-h-[500px] rounded-xl overflow-hidden shadow-lg group">
                             {
                                 item?.img ? <Image
                             src={item.img}
@@ -92,12 +94,20 @@ const Team = () => {
                             />:
                             <div className="w-full top-0 absolute z-20 h-full bg-gray-900"></div>
                             }
-                            <div className="absolute bottom-4 left-4 right-4 bg-white rounded-xl p-4 flex items-center justify-between shadow-md">
-                                <div>
-                                    <h3 className="font-bold text-gray-900">{item.title}</h3>
-                                    <p className="text-sm text-gray-500">{item.subtitle}</p>
+                            <div className="absolute bottom-6 left-4 right-4  rounded-xl p-4  shadow-md">
+                                <h3 className="font-bold xxl:text-[20px] text-white">{item.title}</h3>
+                                <p className="text-[12px] my-1.5 text-white">{item.subtitle}</p>
+                                <div className="hidden group-hover:flex ease-out transition-all duration-1000 gap-2">
+                                    <div className="bg-white text-black size-[40px] flex justify-center items-center rounded-tl-3xl rounded-br-3xl">
+                                        <Facebook className='' />
+                                    </div>
+                                    <div className="bg-[#924FF8] text-gray-200 size-[40px] flex justify-center items-center rounded-tl-3xl rounded-br-3xl">
+                                        <BsTwitterX />
+                                    </div>
+                                    <div className="bg-white text-black size-[40px] flex justify-center items-center rounded-tl-3xl rounded-br-3xl">
+                                        <FaLinkedinIn />
+                                    </div>
                                 </div>
-                                <ArrowUpRight className="w-5 h-5 text-gray-700" />
                             </div>
                         </div>
                     </SwiperSlide>

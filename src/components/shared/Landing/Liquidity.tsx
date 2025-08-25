@@ -34,7 +34,7 @@ const data =[
 const Liquidity = () => {
     return (
         <div className='container p-1.5 mx-auto'>
-            <div className='xxl:max-w-[1250px] xl:max-w-[1200px] mx-auto my-14 md:items-center grid grid-cols-1 md:grid-cols-2 gap-12'>
+            <div className='xxl:max-w-[1250px] xl:max-w-[1200px] mx-auto sm:my-14 md:items-center grid grid-cols-1 md:grid-cols-2 gap-12'>
                 <div className="flex flex-col h-full md:h-[88%] justify-between">
                     <div className="">
                         <div className="">
